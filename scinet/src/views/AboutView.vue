@@ -43,6 +43,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: stretch powiększa pudełko w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-self: stretch;
+
   /* display flex: panel i kwadrat stają się elementami flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -54,6 +55,7 @@ const isActive = ref(false)
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* flex-flow: układa elementy w rzędzie i zawija je, gdy brakuje miejsca */
   /* Wartości: skrót flex-direction i flex-wrap: row nowrap (domyślna), row wrap, row wrap-reverse, row-reverse wrap, column nowrap, column wrap, column-reverse wrap */
   /* Działa, gdy: element ma display: flex lub inline-flex */
@@ -62,6 +64,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, dotyczy tylko bezpośrednich dzieci */
   /* Model pudełkowy: działa tak jak flex-direction i flex-wrap */
   flex-flow: row wrap;
+
   /* justify-content space-between: rozsuwa panel i kwadrat na przeciwne strony */
   /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
   /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
@@ -70,6 +73,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
   /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: space-between;
+
   /* align-items stretch: elementy mają domyślnie równą wysokość */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -78,6 +82,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: stretch;
+
   /* align-content flex-start: po zawinięciu trzyma linie przy górnej krawędzi */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, space-between, space-around, space-evenly, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex, flex-wrap: wrap lub wrap-reverse i jest wolne miejsce w osi poprzecznej */
@@ -86,6 +91,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, przesuwa całe linie dzieci, a nie pojedyncze dzieci */
   /* Model pudełkowy: stretch rozciąga linie, a pozostałe wartości nie zmieniają rozmiaru pudełek */
   align-content: flex-start;
+
   /* gap: ustawia odstęp między elementami */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent; dwie wartości oznaczają row-gap i column-gap */
   /* Działa, gdy: element ma display: flex lub inline-flex; odstęp powstaje tylko między dziećmi, a nie przy krawędzi kontenera */
@@ -94,6 +100,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka, nie zapada się i dodaje się do marginesów */
   gap: var(--space-m);
+
   /* Zamyka regułę układu */
 }
 
@@ -107,6 +114,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: powiększa pudełko w osi głównej, ale najwyżej do max-width przy row albo max-height przy column */
   flex-grow: 1;
+
   /* flex-shrink: panel może się zmniejszać, gdy brakuje miejsca */
   /* Wartości: 1 (domyślna) albo dowolna liczba nieujemna; 0 oznacza brak zmniejszania */
   /* Działa, gdy: rodzic ma display: flex lub inline-flex i dzieci nie mieszczą się w linii */
@@ -115,6 +123,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: zmniejsza pudełko w osi głównej, ale nie poniżej min-width przy row albo min-height przy column; padding i border się nie zmniejszają */
   flex-shrink: 1;
+
   /* flex-basis: szerokość bazowa panelu to 250 pikseli */
   /* Wartości: auto (domyślna), content, długość, np. 250px, procent, min-content, max-content, fit-content */
   /* Działa, gdy: rodzic ma display: flex lub inline-flex; przy row to szerokość, a przy column wysokość */
@@ -123,6 +132,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: ustala początkowy rozmiar pudełka i ma pierwszeństwo przed width lub height; przy box-sizing: border-box obejmuje padding i border */
   flex-basis: 250px;
+
   /* display flex: akapit i przycisk stają się elementami flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -134,6 +144,7 @@ const isActive = ref(false)
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* flex-direction column: ustawia akapit nad przyciskiem */
   /* Wartości: row (domyślna), row-reverse, column, column-reverse */
   /* Działa, gdy: element ma display: flex lub inline-flex; ustala oś główną: przy column justify-content działa w pionie, align-items w poziomie, a flex-basis oznacza wysokość */
@@ -142,6 +153,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, ustawia kierunek tylko bezpośrednich dzieci */
   /* Model pudełkowy: sam nie zmienia rozmiaru, ale decyduje, czy flex-grow i flex-shrink zmieniają szerokość czy wysokość pudełka dziecka */
   flex-direction: column;
+
   /* align-items flex-start: elementy nie rozciągają się na szerokość panelu */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -150,6 +162,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: flex-start;
+
   /* gap: ustawia odstęp między akapitem a przyciskiem */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent; dwie wartości oznaczają row-gap i column-gap */
   /* Działa, gdy: element ma display: flex lub inline-flex; odstęp powstaje tylko między dziećmi, a nie przy krawędzi kontenera */
@@ -158,6 +171,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka, nie zapada się i dodaje się do marginesów */
   gap: var(--space-s);
+
   /* Model pudełkowy: ustawia wewnętrzny odstęp panelu */
   /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
   /* Działa, gdy: element jest wyświetlany na stronie */
@@ -166,6 +180,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
   /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: var(--space-m);
+
   /* Model pudełkowy: ustawia obramowanie panelu */
   /* Wartości: skrót szerokość, styl, kolor; szerokość: thin, medium, thick, długość; styl: none, hidden, solid, dashed, dotted, double, groove, ridge, inset, outset */
   /* Działa, gdy: styl jest inny niż none i hidden */
@@ -174,6 +189,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: warstwa między padding a margin; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   border: 1px solid var(--color-border);
+
   /* Zaokrągla rogi panelu */
   /* Wartości: 0 (domyślna), długość, procent; od jednej do czterech wartości dla kolejnych rogów */
   /* Działa, gdy: element ma widoczne tło lub obramowanie */
@@ -182,6 +198,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dzieci mają swoje prostokątne rogi */
   /* Model pudełkowy: nie zmienia rozmiaru pudełka */
   border-radius: var(--radius);
+
   /* Ustawia jasne tło panelu */
   /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
   /* Działa, gdy: element ma rozmiar większy od zera */
@@ -190,6 +207,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: var(--color-panel);
+
   /* Zamyka regułę panelu tekstu */
 }
 
@@ -204,6 +222,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: stretch powiększa pudełko w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-self: flex-end;
+
   /* margin-top auto: przesuwa przycisk na dół panelu */
   /* Wartości: 0, długość, procent, auto */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex; auto przy flex-direction: column zabiera wolne miejsce nad elementem i spycha go na dół */
@@ -212,6 +231,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: zewnętrzna warstwa nad border; nie wlicza się do height */
   margin-top: auto;
+
   /* Zamyka regułę przycisku w panelu */
 }
 
@@ -225,6 +245,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: red;
+
   /* Zamyka regułę klasy active */
 }
 
@@ -238,6 +259,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: blue;
+
   /* Zamyka regułę klasy bez_active */
 }
 
@@ -251,6 +273,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: działa tak jak flex-grow, flex-shrink i flex-basis */
   flex: 0 0 auto;
+
   /* align-self center: środkuje kwadrat w pionie, wbrew ustawieniu rodzica */
   /* Wartości: auto (domyślna, odczytuje align-items rodzica), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: rodzic ma display: flex lub inline-flex; stretch działa, gdy element nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -259,6 +282,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: stretch powiększa pudełko w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-self: center;
+
   /* display flex: tekst kwadratu staje się elementem flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -270,6 +294,7 @@ const isActive = ref(false)
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* justify-content center: środkuje tekst w poziomie */
   /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
   /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
@@ -278,6 +303,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
   /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: center;
+
   /* align-items center: środkuje tekst w pionie */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -286,6 +312,7 @@ const isActive = ref(false)
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: center;
+
   /* Model pudełkowy: ustawia szerokość 100 pikseli */
   /* Wartości: auto (domyślna), długość, procent, min-content, max-content, fit-content */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex */
@@ -294,6 +321,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, ale procentowe szerokości dzieci liczą się od tej wartości */
   /* Model pudełkowy: przy content-box to szerokość samej treści, a przy border-box treści, padding i border razem */
   width: 100px;
+
   /* Model pudełkowy: ustawia wysokość 100 pikseli */
   /* Wartości: auto (domyślna), długość, procent, min-content, max-content, fit-content */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex; procent wymaga ustawionej wysokości rodzica */
@@ -302,6 +330,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, ale procentowe wysokości dzieci liczą się od tej wartości */
   /* Model pudełkowy: przy content-box to wysokość samej treści, a przy border-box treści, padding i border razem */
   height: 100px;
+
   /* Model pudełkowy: ustawia żółte obramowanie o grubości 5 pikseli */
   /* Wartości: skrót szerokość, styl, kolor; szerokość: thin, medium, thick, długość; styl: none, hidden, solid, dashed, dotted, double, groove, ridge, inset, outset */
   /* Działa, gdy: styl jest inny niż none i hidden */
@@ -310,6 +339,7 @@ const isActive = ref(false)
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: warstwa między padding a margin; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   border: 5px solid yellow;
+
   /* Ustawia jasny kolor tekstu */
   /* Wartości: nazwa, np. red, kod #333, rgb(), hsl(), transparent, currentColor, var() */
   /* Działa, gdy: element lub jego potomek ma tekst */
@@ -318,6 +348,7 @@ const isActive = ref(false)
   /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
   /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: var(--color-light);
+
   /* Zmniejsza tekst, żeby zmieścił się w kwadracie */
   /* Wartości: medium (domyślna), długość, np. 14px, 0.875rem, em, procent, xx-small do xxx-large, smaller, larger */
   /* Działa, gdy: element lub jego potomek ma tekst */
@@ -326,6 +357,7 @@ const isActive = ref(false)
   /* Na potomne: przechodzi na wszystkie potomne bez własnego rozmiaru */
   /* Model pudełkowy: zmienia rozmiar treści, a przez to pudełka o rozmiarze auto */
   font-size: 0.875rem;
+
   /* Wyśrodkowuje linie tekstu */
   /* Wartości: start (domyślna), end, left, right, center, justify, match-parent */
   /* Działa, gdy: element jest blokiem lub elementem flex i ma w środku tekst */
@@ -334,6 +366,7 @@ const isActive = ref(false)
   /* Na potomne: przechodzi na wszystkie potomne bez własnej wartości */
   /* Model pudełkowy: nie zmienia rozmiaru pudełka */
   text-align: center;
+
   /* Zamyka regułę kształtu kwadratu */
 }
 
@@ -349,6 +382,7 @@ const isActive = ref(false)
     /* Na potomne: wartość nie przechodzi, ustawia kierunek tylko bezpośrednich dzieci */
     /* Model pudełkowy: sam nie zmienia rozmiaru, ale decyduje, czy flex-grow i flex-shrink zmieniają szerokość czy wysokość pudełka dziecka */
     flex-direction: column;
+
     /* flex-wrap nowrap: bez zawijania kolumna zajmuje całą szerokość układu */
     /* Wartości: nowrap (domyślna), wrap, wrap-reverse */
     /* Działa, gdy: element ma display: flex lub inline-flex, a dzieci nie mieszczą się w jednej linii; przy column zawijanie wymaga ograniczonej wysokości kontenera */
@@ -357,6 +391,7 @@ const isActive = ref(false)
     /* Na potomne: wartość nie przechodzi, zawija tylko bezpośrednie dzieci */
     /* Model pudełkowy: przy nowrap dzieci mogą się zmniejszać dzięki flex-shrink, przy wrap najpierw przechodzą do nowej linii */
     flex-wrap: nowrap;
+
     /* Zamyka regułę układu na wąskim ekranie */
   }
 
@@ -370,6 +405,7 @@ const isActive = ref(false)
     /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
     /* Model pudełkowy: ustala początkowy rozmiar pudełka i ma pierwszeństwo przed width lub height; przy box-sizing: border-box obejmuje padding i border */
     flex-basis: auto;
+
     /* Zamyka regułę panelu na wąskim ekranie */
   }
 
@@ -383,9 +419,12 @@ const isActive = ref(false)
     /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
     /* Model pudełkowy: nie zmienia rozmiaru pudełka */
     order: -1;
+
     /* Zamyka regułę kwadratu na wąskim ekranie */
   }
+
   /* Zamyka reguły dla wąskich ekranów */
 }
+
 /* Zamyka sekcję stylów */
 </style>

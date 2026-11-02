@@ -37,6 +37,7 @@
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: zmniejsza pudełko w osi głównej, ale nie poniżej min-width przy row albo min-height przy column; padding i border się nie zmniejszają */
   flex-shrink: 0;
+
   /* display flex: logo i nawigacja stają się elementami flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -48,6 +49,7 @@
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* flex-wrap wrap: przenosi nawigację do nowej linii, gdy brakuje miejsca */
   /* Wartości: nowrap (domyślna), wrap, wrap-reverse */
   /* Działa, gdy: element ma display: flex lub inline-flex, a dzieci nie mieszczą się w jednej linii; przy column zawijanie wymaga ograniczonej wysokości kontenera */
@@ -56,6 +58,7 @@
   /* Na potomne: wartość nie przechodzi, zawija tylko bezpośrednie dzieci */
   /* Model pudełkowy: przy nowrap dzieci mogą się zmniejszać dzięki flex-shrink, przy wrap najpierw przechodzą do nowej linii */
   flex-wrap: wrap;
+
   /* justify-content space-between: rozsuwa logo i nawigację na przeciwne strony */
   /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
   /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
@@ -64,6 +67,7 @@
   /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
   /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: space-between;
+
   /* align-items center: wyrównuje elementy w pionie do środka */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -72,6 +76,7 @@
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: center;
+
   /* align-content center: po zawinięciu trzyma linie razem na środku */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, space-between, space-around, space-evenly, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex, flex-wrap: wrap lub wrap-reverse i jest wolne miejsce w osi poprzecznej */
@@ -80,6 +85,7 @@
   /* Na potomne: wartość nie przechodzi, przesuwa całe linie dzieci, a nie pojedyncze dzieci */
   /* Model pudełkowy: stretch rozciąga linie, a pozostałe wartości nie zmieniają rozmiaru pudełek */
   align-content: center;
+
   /* column-gap: ustawia odstęp między kolumnami */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent */
   /* Działa, gdy: element ma display: flex lub inline-flex; działa między dziećmi przy row oraz między kolumnami przy column i wrap */
@@ -88,6 +94,7 @@
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka */
   column-gap: var(--space-m);
+
   /* row-gap: ustawia odstęp między liniami */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent */
   /* Działa, gdy: element ma display: flex lub inline-flex; działa między liniami przy row i wrap oraz między dziećmi przy column */
@@ -96,6 +103,7 @@
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka */
   row-gap: var(--space-s);
+
   /* Model pudełkowy: ustawia wewnętrzny odstęp menu */
   /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
   /* Działa, gdy: element jest wyświetlany na stronie */
@@ -104,6 +112,7 @@
   /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
   /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: var(--space-s) var(--space-m);
+
   /* Ustawia ciemne tło */
   /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
   /* Działa, gdy: element ma rozmiar większy od zera */
@@ -112,6 +121,7 @@
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: var(--color-dark);
+
   /* Ustawia jasny kolor tekstu */
   /* Wartości: nazwa, np. red, kod #333, rgb(), hsl(), transparent, currentColor, var() */
   /* Działa, gdy: element lub jego potomek ma tekst */
@@ -120,6 +130,7 @@
   /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
   /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: var(--color-light);
+
   /* Zamyka regułę nagłówka z menu */
 }
 
@@ -133,6 +144,7 @@
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: działa tak jak flex-grow, flex-shrink i flex-basis */
   flex: 0 0 auto;
+
   /* Pogrubia tekst logo */
   /* Wartości: normal (domyślna, 400), bold (700), lighter, bolder, liczby od 1 do 1000 */
   /* Działa, gdy: czcionka ma taką grubość */
@@ -141,6 +153,7 @@
   /* Na potomne: przechodzi na wszystkie potomne bez własnej grubości */
   /* Model pudełkowy: może nieco zmienić szerokość treści */
   font-weight: bold;
+
   /* Zamyka regułę logo */
 }
 
@@ -157,6 +170,7 @@
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* flex-direction row: układa linki w rzędzie */
   /* Wartości: row (domyślna), row-reverse, column, column-reverse */
   /* Działa, gdy: element ma display: flex lub inline-flex; ustala oś główną: przy column justify-content działa w pionie, align-items w poziomie, a flex-basis oznacza wysokość */
@@ -165,6 +179,7 @@
   /* Na potomne: wartość nie przechodzi, ustawia kierunek tylko bezpośrednich dzieci */
   /* Model pudełkowy: sam nie zmienia rozmiaru, ale decyduje, czy flex-grow i flex-shrink zmieniają szerokość czy wysokość pudełka dziecka */
   flex-direction: row;
+
   /* justify-content flex-end: dosuwa linki do prawej strony */
   /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
   /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
@@ -173,6 +188,7 @@
   /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
   /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: flex-end;
+
   /* align-items baseline: wyrównuje linki do linii bazowej tekstu */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -181,6 +197,7 @@
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: baseline;
+
   /* gap: ustawia odstęp między linkami */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent; dwie wartości oznaczają row-gap i column-gap */
   /* Działa, gdy: element ma display: flex lub inline-flex; odstęp powstaje tylko między dziećmi, a nie przy krawędzi kontenera */
@@ -189,6 +206,7 @@
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka, nie zapada się i dodaje się do marginesów */
   gap: var(--space-m);
+
   /* Zamyka regułę nawigacji */
 }
 
@@ -203,6 +221,7 @@
   /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
   /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: var(--color-light);
+
   /* Usuwa podkreślenie linków */
   /* Wartości: none (domyślna), underline, overline, line-through; można dodać styl solid, double, dotted, dashed, wavy oraz kolor i grubość */
   /* Działa, gdy: element lub jego potomek ma tekst */
@@ -211,6 +230,7 @@
   /* Na potomne: wartość nie przechodzi, ale linia rysuje się też na tekście potomków wewnątrz elementu */
   /* Model pudełkowy: nie zmienia rozmiaru pudełka */
   text-decoration: none;
+
   /* Zamyka regułę linków */
 }
 
@@ -226,6 +246,7 @@
     /* Na potomne: wartość nie przechodzi, ustawia kierunek tylko bezpośrednich dzieci */
     /* Model pudełkowy: sam nie zmienia rozmiaru, ale decyduje, czy flex-grow i flex-shrink zmieniają szerokość czy wysokość pudełka dziecka */
     flex-direction: column;
+
     /* flex-wrap nowrap: bez zawijania kolumna zajmuje całą szerokość menu */
     /* Wartości: nowrap (domyślna), wrap, wrap-reverse */
     /* Działa, gdy: element ma display: flex lub inline-flex, a dzieci nie mieszczą się w jednej linii; przy column zawijanie wymaga ograniczonej wysokości kontenera */
@@ -234,6 +255,7 @@
     /* Na potomne: wartość nie przechodzi, zawija tylko bezpośrednie dzieci */
     /* Model pudełkowy: przy nowrap dzieci mogą się zmniejszać dzięki flex-shrink, przy wrap najpierw przechodzą do nowej linii */
     flex-wrap: nowrap;
+
     /* align-items stretch: rozciąga logo i nawigację na całą szerokość */
     /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
     /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -242,6 +264,7 @@
     /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
     /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
     align-items: stretch;
+
     /* Zamyka regułę nagłówka na wąskim ekranie */
   }
 
@@ -255,9 +278,12 @@
     /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
     /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
     justify-content: space-evenly;
+
     /* Zamyka regułę nawigacji na wąskim ekranie */
   }
+
   /* Zamyka reguły dla wąskich ekranów */
 }
+
 /* Zamyka sekcję stylów */
 </style>

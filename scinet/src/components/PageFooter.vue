@@ -23,6 +23,7 @@
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: zmniejsza pudełko w osi głównej, ale nie poniżej min-width przy row albo min-height przy column; padding i border się nie zmniejszają */
   flex-shrink: 0;
+
   /* display flex: tekst stopki staje się elementem flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -34,6 +35,7 @@
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* justify-content flex-start: ustawia tekst przy lewej krawędzi */
   /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
   /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
@@ -42,6 +44,7 @@
   /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
   /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: flex-start;
+
   /* align-items center: środkuje tekst w pionie */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -50,6 +53,7 @@
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: center;
+
   /* Model pudełkowy: ustawia najmniejszą wysokość stopki */
   /* Wartości: 0 lub auto (domyślna; auto na elementach flex), długość, np. 50px, 100vh, procent, min-content, max-content, fit-content */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex; procent wymaga ustawionej wysokości rodzica */
@@ -58,6 +62,7 @@
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: dolny limit wysokości pudełka, ma pierwszeństwo przed height i max-height */
   min-height: 50px;
+
   /* Model pudełkowy: ustawia wewnętrzny odstęp stopki */
   /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
   /* Działa, gdy: element jest wyświetlany na stronie */
@@ -66,6 +71,7 @@
   /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
   /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: var(--space-s) var(--space-m);
+
   /* Ustawia ciemne tło */
   /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
   /* Działa, gdy: element ma rozmiar większy od zera */
@@ -74,6 +80,7 @@
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: var(--color-dark);
+
   /* Ustawia jasny kolor tekstu */
   /* Wartości: nazwa, np. red, kod #333, rgb(), hsl(), transparent, currentColor, var() */
   /* Działa, gdy: element lub jego potomek ma tekst */
@@ -82,7 +89,9 @@
   /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
   /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: var(--color-light);
+
   /* Zamyka regułę stopki */
 }
+
 /* Zamyka sekcję stylów */
 </style>

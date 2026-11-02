@@ -59,6 +59,7 @@ h1 {
   /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
   /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: red;
+
   /* Zamyka regułę nagłówka */
 }
 
@@ -72,6 +73,7 @@ h1 {
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: stretch powiększa pudełko w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-self: stretch;
+
   /* Model pudełkowy: ustawia wewnętrzny odstęp akapitu */
   /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
   /* Działa, gdy: element jest wyświetlany na stronie */
@@ -80,6 +82,7 @@ h1 {
   /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
   /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: var(--space-s);
+
   /* Model pudełkowy: ustawia obramowanie akapitu */
   /* Wartości: skrót szerokość, styl, kolor; szerokość: thin, medium, thick, długość; styl: none, hidden, solid, dashed, dotted, double, groove, ridge, inset, outset */
   /* Działa, gdy: styl jest inny niż none i hidden */
@@ -88,6 +91,7 @@ h1 {
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: warstwa między padding a margin; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   border: 1px solid var(--color-border);
+
   /* Zaokrągla rogi akapitu */
   /* Wartości: 0 (domyślna), długość, procent; od jednej do czterech wartości dla kolejnych rogów */
   /* Działa, gdy: element ma widoczne tło lub obramowanie */
@@ -96,6 +100,7 @@ h1 {
   /* Na potomne: nie przechodzi, dzieci mają swoje prostokątne rogi */
   /* Model pudełkowy: nie zmienia rozmiaru pudełka */
   border-radius: var(--radius);
+
   /* Ustawia jasne tło akapitu */
   /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
   /* Działa, gdy: element ma rozmiar większy od zera */
@@ -104,6 +109,7 @@ h1 {
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: var(--color-panel);
+
   /* Zamyka regułę akapitów z kontekstem */
 }
 
@@ -117,6 +123,7 @@ h1 {
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: stretch powiększa pudełko w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-self: stretch;
+
   /* display flex: przyciski stają się elementami flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -128,6 +135,7 @@ h1 {
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* flex-flow: układa przyciski w rzędzie i zawija je, gdy brakuje miejsca */
   /* Wartości: skrót flex-direction i flex-wrap: row nowrap (domyślna), row wrap, row wrap-reverse, row-reverse wrap, column nowrap, column wrap, column-reverse wrap */
   /* Działa, gdy: element ma display: flex lub inline-flex */
@@ -136,6 +144,7 @@ h1 {
   /* Na potomne: wartość nie przechodzi, dotyczy tylko bezpośrednich dzieci */
   /* Model pudełkowy: działa tak jak flex-direction i flex-wrap */
   flex-flow: row wrap;
+
   /* justify-content flex-start: ustawia przyciski od lewej strony */
   /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
   /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
@@ -144,6 +153,7 @@ h1 {
   /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
   /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: flex-start;
+
   /* align-content flex-start: po zawinięciu trzyma linie przy górnej krawędzi */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, space-between, space-around, space-evenly, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex, flex-wrap: wrap lub wrap-reverse i jest wolne miejsce w osi poprzecznej */
@@ -152,6 +162,7 @@ h1 {
   /* Na potomne: wartość nie przechodzi, przesuwa całe linie dzieci, a nie pojedyncze dzieci */
   /* Model pudełkowy: stretch rozciąga linie, a pozostałe wartości nie zmieniają rozmiaru pudełek */
   align-content: flex-start;
+
   /* gap: ustawia odstęp między przyciskami */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent; dwie wartości oznaczają row-gap i column-gap */
   /* Działa, gdy: element ma display: flex lub inline-flex; odstęp powstaje tylko między dziećmi, a nie przy krawędzi kontenera */
@@ -160,6 +171,7 @@ h1 {
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka, nie zapada się i dodaje się do marginesów */
   gap: var(--space-s);
+
   /* Zamyka regułę grupy przycisków */
 }
 
@@ -174,6 +186,7 @@ h1 {
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: działa tak jak flex-grow, flex-shrink i flex-basis */
   flex: 0 1 220px;
+
   /* Zamyka regułę przycisków w grupie */
 }
 
@@ -189,9 +202,12 @@ h1 {
     /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
     /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
     justify-content: space-around;
+
     /* Zamyka regułę grupy na wąskim ekranie */
   }
+
   /* Zamyka reguły dla wąskich ekranów */
 }
+
 /* Zamyka sekcję stylów */
 </style>

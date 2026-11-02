@@ -35,6 +35,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: powiększa pudełko w osi głównej, ale najwyżej do max-width przy row albo max-height przy column */
   flex-grow: 1;
+
   /* display flex: elementy strony stają się elementami flexboksa */
   /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
   /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
@@ -46,6 +47,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
   /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
+
   /* flex-direction column: ustawia elementy jeden pod drugim */
   /* Wartości: row (domyślna), row-reverse, column, column-reverse */
   /* Działa, gdy: element ma display: flex lub inline-flex; ustala oś główną: przy column justify-content działa w pionie, align-items w poziomie, a flex-basis oznacza wysokość */
@@ -54,6 +56,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: wartość nie przechodzi, ustawia kierunek tylko bezpośrednich dzieci */
   /* Model pudełkowy: sam nie zmienia rozmiaru, ale decyduje, czy flex-grow i flex-shrink zmieniają szerokość czy wysokość pudełka dziecka */
   flex-direction: column;
+
   /* align-items flex-start: elementy nie rozciągają się na całą szerokość */
   /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
   /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
@@ -62,6 +65,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
   /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: flex-start;
+
   /* gap: ustawia odstęp między elementami */
   /* Wartości: normal (domyślna), długość, np. 10px, 1rem, procent; dwie wartości oznaczają row-gap i column-gap */
   /* Działa, gdy: element ma display: flex lub inline-flex; odstęp powstaje tylko między dziećmi, a nie przy krawędzi kontenera */
@@ -70,6 +74,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: wartość nie przechodzi, dotyczy tylko odstępów między bezpośrednimi dziećmi */
   /* Model pudełkowy: to nie margines, nie należy do pudełka dziecka, nie zapada się i dodaje się do marginesów */
   gap: var(--space-m);
+
   /* Model pudełkowy: treść zajmuje całą dostępną szerokość */
   /* Wartości: auto (domyślna), długość, procent, min-content, max-content, fit-content */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex */
@@ -78,6 +83,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: nie przechodzi, ale procentowe szerokości dzieci liczą się od tej wartości */
   /* Model pudełkowy: przy content-box to szerokość samej treści, a przy border-box treści, padding i border razem */
   width: 100%;
+
   /* Model pudełkowy: ogranicza szerokość treści na dużych ekranach */
   /* Wartości: none (domyślna), długość, procent, min-content, max-content, fit-content */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex */
@@ -86,6 +92,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: górny limit szerokości pudełka, zatrzymuje też flex-grow; przy border-box obejmuje padding i border */
   max-width: 960px;
+
   /* Model pudełkowy: margines auto po bokach środkuje treść na stronie */
   /* Wartości: 0, długość, procent, auto; od jednej do czterech wartości: góra, prawa, dół, lewa */
   /* Działa, gdy: element jest blokiem, inline-block lub elementem flex; auto po bokach środkuje blok o szerokości mniejszej niż rodzic, a w układzie flex zabiera wolne miejsce */
@@ -94,6 +101,7 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
   /* Model pudełkowy: najbardziej zewnętrzna warstwa, poza border; nie wlicza się do width nawet przy border-box; pionowe marginesy bloków się zapadają, a elementów flex nie */
   margin: 0 auto;
+
   /* Model pudełkowy: ustawia wewnętrzny odstęp treści */
   /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
   /* Działa, gdy: element jest wyświetlany na stronie */
@@ -102,7 +110,9 @@ import PageFooter from './components/PageFooter.vue'
   /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
   /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: var(--space-m);
+
   /* Zamyka regułę głównej treści */
 }
+
 /* Zamyka sekcję stylów */
 </style>
