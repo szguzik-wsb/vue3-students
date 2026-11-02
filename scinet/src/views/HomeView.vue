@@ -32,5 +32,37 @@ h1 {
   color: red;
 /* Zamyka regułę nagłówka */
 }
+.btn {
+  /* Ustawia wewnętrzny odstęp 10 pikseli w pionie i 20 pikseli w poziomie */
+  padding: 10px 20px;
+  /* Usuwa obramowanie przycisku */
+  border: none;
+  /* Zaokrągla rogi przycisku o promieniu 5 pikseli */
+  border-radius: 5px;
+  /* Zmienia kursor na wskaźnik przy najechaniu na przycisk */
+  cursor: pointer;
+}
+
+.btn:hover {
+  /* Zmienia tło przycisku na ciemniejszy niebieski przy najechaniu */
+  background-color: darkblue;
+}
+
+.btn:active {
+  /* Zmienia tło przycisku na jeszcze ciemniejszy niebieski po kliknięciu */
+  background-color: navy;
+}
+.btn:focus {
+  /* Usuwa obramowanie przycisku po kliknięciu */
+  outline: none;
+}
+
+.btn-primary {
+  /* Ustawia niebieskie tło przycisku */
+  background-color: blue;
+  /* Ustawia biały kolor tekstu przycisku */
+  color: white;
+}
+/* Zamyka regułę przycisku */         
 /* Zamyka sekcję stylów */
 </style>
