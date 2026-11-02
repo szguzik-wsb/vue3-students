@@ -6,11 +6,18 @@ import { ref } from 'vue'
 // Tworzy reaktywną wiadomość z tekstem początkowym
 const message = ref('Czesć!')
 
+const context = ref('Witaj w SciNet!')
+const showContext = ref(false)
+
 // Tworzy funkcję zmieniającą wiadomość
 const changeMessage = () => {
   // Ustawia nowy tekst wiadomości
   message.value = 'Cześć Szymon!'
 // Zamyka funkcję changeMessage
+}
+
+const changeShowContext = () => {
+  showContext.value = !showContext.value
 }
 // Zamyka sekcję skryptu
 </script> 
@@ -20,8 +27,13 @@ const changeMessage = () => {
 <template>
   <!-- Wyświetla wiadomość w nagłówku -->
   <h1>{{ message }}</h1>
+  <!-- v-if: gdy showContext ma wartość false, akapitu w ogóle nie ma na stronie, Vue dodaje go dopiero przy wartości true -->
+  <p v-if="showContext">{{ context }} to jest v-if</p>
+  <!-- v-show: akapit jest na stronie zawsze, a gdy showContext ma wartość false, Vue ukrywa go stylem display: none -->
+  <p v-show="showContext">{{ context }} to jest v-show</p>
   <!-- Wyświetla przycisk, który po kliknięciu uruchamia changeMessage -->
   <button @click="changeMessage" class="btn btn-primary">Zmien przywitanie</button>
+  <button @click="changeShowContext" class="btn btn-red">Pokaż/Ukryj kontekst</button>
 <!-- Zamyka szablon -->
 </template>
 <!-- Otwiera style działające tylko w tym komponencie -->
@@ -60,6 +72,13 @@ h1 {
 .btn-primary {
   /* Ustawia niebieskie tło przycisku */
   background-color: blue;
+  /* Ustawia biały kolor tekstu przycisku */
+  color: white;
+}
+
+.btn-red {
+  /* Ustawia czerwony tło przycisku */
+  background-color: red;
   /* Ustawia biały kolor tekstu przycisku */
   color: white;
 }
