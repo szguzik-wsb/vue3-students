@@ -1,0 +1,21 @@
+/* Reguła dla wszystkich elementów strony */
+* {
+  /* Usuwa zewnętrzne marginesy */
+  margin: 0;
+  /* Usuwa wewnętrzne odstępy */
+  padding: 0;
+  /* Wlicza odstępy i obramowanie do szerokości oraz wysokości elementu */
+  box-sizing: border-box;
+/* Zamyka regułę dla wszystkich elementów */
+}
+
+/* Reguła dla głównego elementu aplikacji */
+#app {
+  /* Układa zawartość za pomocą flexboksa */
+  display: flex;
+  /* Ustawia elementy jeden pod drugim */
+  flex-direction: column;
+  /* Ustawia wysokość co najmniej na całe okno przeglądarki */
+  min-height: 100vh;
+/* Zamyka regułę głównego elementu */
+}
