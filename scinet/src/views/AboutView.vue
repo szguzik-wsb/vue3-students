@@ -419,7 +419,6 @@ const isActive = ref(false)
     /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
     /* Model pudełkowy: nie zmienia rozmiaru pudełka */
     order: -1;
-
     /* Zamyka regułę kwadratu na wąskim ekranie */
   }
 

@@ -60,6 +60,11 @@ h1 {
   /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: red;
 
+  /* okreslnie jaki kolor przy rozdzielczosciach screen oraz 768px */
+  @media screen and (max-width: 768px) {
+    color: green;
+  }
+
   /* Zamyka regułę nagłówka */
 }
 
