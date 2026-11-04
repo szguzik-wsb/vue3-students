@@ -15,6 +15,8 @@
       <RouterLink to="/">Home</RouterLink>
       <!-- Link routera do strony „O nas” -->
       <RouterLink to="/about">About</RouterLink>
+      <!-- Link routera do strony „Publications” -->
+      <RouterLink to="/publications">Publications</RouterLink>
       <!-- Zwykły link Contact prowadzący pod adres /about -->
       <a href="/about">Contact</a>
       <!-- Zamyka nawigację -->

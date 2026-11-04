@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AboutView from '../views/AboutView.vue'
 // Importuje komponent strony głównej
 import HomeView from '../views/HomeView.vue'
+import PublicationsView from '../views/PublicationsView.vue'
 
 // Tworzy router i zapisuje go w stałej router
 const router = createRouter(
@@ -29,6 +30,7 @@ const router = createRouter(
       { path: '/index', name: 'index', component: HomeView },
       // Trasa pod adresem /about o nazwie about, pokazuje stronę „O nas”
       { path: '/about', name: 'about', component: AboutView },
+      { path: '/publications', name: 'publications', component: PublicationsView },
     // Zamyka listę tras
     ],
   // Zamyka obiekt z ustawieniami routera
