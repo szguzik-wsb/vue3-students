@@ -26,6 +26,14 @@ watch(
   { deep: true },
 )
 
+const searchQuery = ref('')
+
+const filteredPublications = computed(() =>
+  publications.value.filter((pub) =>
+    pub.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
+  ),
+)
+
 const cartSummary = computed(() => `${cart.value.length} z ${publications.value.length}`)
 
 const isInCart = (pub: Publication): boolean => cart.value.some((item) => item.id === pub.id)
@@ -43,9 +51,16 @@ const removeFromCart = (pub: Publication): void => {
 
 <template>
   <div class="publications-layout">
+    <input
+      v-model.trim="searchQuery"
+      type="search"
+      class="publications-search"
+      placeholder="Szukaj po tytule"
+      aria-label="Szukaj po tytule"
+    />
     <ul class="publications-list">
       <PublicationCard
-        v-for="pub in publications"
+        v-for="pub in filteredPublications"
         :key="pub.id"
         :publication="pub"
         :in-cart="isInCart(pub)"
@@ -79,6 +94,18 @@ const removeFromCart = (pub: Publication): void => {
   align-items: flex-start;
 
   gap: var(--space-m);
+}
+
+.publications-search {
+  flex: 1 1 100%;
+
+  padding: var(--space-s);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius);
+
+  font: inherit;
 }
 
 .publications-list {
