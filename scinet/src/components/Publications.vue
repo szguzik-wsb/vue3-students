@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import type { Publication } from '@/types/publication'
 import { startPublications } from '@/data/publications'
 import PublicationCard from '@/components/PublicationCard.vue'
@@ -13,8 +13,18 @@ const emit = defineEmits<{
   closeCart: []
 }>()
 
+const CART_STORAGE_KEY = 'scinet-cart'
+
 const publications = ref<Publication[]>(startPublications)
-const cart = ref<Publication[]>([])
+const cart = ref<Publication[]>(JSON.parse(localStorage.getItem(CART_STORAGE_KEY) ?? '[]'))
+
+watch(
+  cart,
+  (newCart) => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(newCart))
+  },
+  { deep: true },
+)
 
 const isInCart = (pub: Publication): boolean => cart.value.some((item) => item.id === pub.id)
 
