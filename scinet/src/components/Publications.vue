@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { Publication } from '@/types/publication'
 import { startPublications } from '@/data/publications'
 import PublicationCard from '@/components/PublicationCard.vue'
@@ -25,6 +25,8 @@ watch(
   },
   { deep: true },
 )
+
+const cartSummary = computed(() => `${cart.value.length} z ${publications.value.length}`)
 
 const isInCart = (pub: Publication): boolean => cart.value.some((item) => item.id === pub.id)
 
@@ -52,7 +54,7 @@ const removeFromCart = (pub: Publication): void => {
       />
     </ul>
     <aside class="cart-panel">
-      <h2>Wybrane</h2>
+      <h2>Wybrane ({{ cartSummary }})</h2>
       <ul class="cart-panel-list">
         <li v-for="pub in cart" :key="pub.id">{{ pub.title }}</li>
       </ul>
