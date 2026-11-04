@@ -1,380 +1,93 @@
-/* Legenda: „Po rodzicu” mówi, czy element sam przejmuje wartość od rodzica, gdy nie ma własnej */
-/* Legenda: „Na potomne” mówi, co ta właściwość robi z elementami wewnątrz; to dwie różne rzeczy */
-/* Legenda: przy każdej właściwości można też podać inherit, initial, unset lub revert */
-/* Reguła ze zmiennymi używanymi w całej aplikacji */
 :root {
-  /* Ciemny kolor menu, stopki i tekstu strony */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --color-dark: #333;
 
-  /* Jasny kolor tekstu na ciemnym tle */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --color-light: white;
 
-  /* Kolor obramowania paneli */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --color-border: #ccc;
 
-  /* Kolor tła paneli */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --color-panel: #f5f5f5;
 
-  /* Mały odstęp */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --space-s: 10px;
 
-  /* Duży odstęp */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --space-m: 20px;
 
-  /* Promień zaokrąglenia rogów */
-  /* Wartości: dowolna poprawna wartość CSS, np. kolor lub długość */
-  /* Działa, gdy: odczytuje ją var() na tym elemencie lub jego potomku */
-  /* Nie działa, gdy: nazwa w var() jest błędna albo zmienną ustawiono na elemencie, który nie jest przodkiem; można podać zapas: var(--nazwa, wartość) */
-  /* Po rodzicu: dziedziczy, element bez własnej wartości bierze ją od rodzica */
-  /* Na potomne: przechodzi na wszystkie potomne; ustawiona w :root działa w całej aplikacji */
-  /* Model pudełkowy: sama nie zmienia pudełka, liczy się właściwość, która ją odczyta */
   --radius: 5px;
-
-  /* Zamyka regułę zmiennych */
 }
 
-/* Reguła dla wszystkich elementów strony */
-/* Selektor *: trafia w każdy element osobno; to nie jest dziedziczenie, bo wartość nie przychodzi od rodzica */
 * {
-  /* Model pudełkowy: usuwa zewnętrzne marginesy */
-  /* Wartości: 0, długość, procent, auto; od jednej do czterech wartości: góra, prawa, dół, lewa */
-  /* Działa, gdy: element jest blokiem, inline-block lub elementem flex; auto po bokach środkuje blok o szerokości mniejszej niż rodzic, a w układzie flex zabiera wolne miejsce */
-  /* Nie działa, gdy: element ma display: inline, bo margines górny i dolny nie odsuwa wtedy sąsiednich linii */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: najbardziej zewnętrzna warstwa, poza border; nie wlicza się do width nawet przy border-box; pionowe marginesy bloków się zapadają, a elementów flex nie */
   margin: 0;
 
-  /* Model pudełkowy: usuwa wewnętrzne odstępy */
-  /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
-  /* Działa, gdy: element jest wyświetlany na stronie */
-  /* Nie działa, gdy: element ma display: inline, bo odstęp górny i dolny nie odsuwa wtedy sąsiednich linii */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
-  /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: 0;
 
-  /* Model pudełkowy: wlicza odstępy i obramowanie do szerokości oraz wysokości elementu */
-  /* Wartości: content-box (domyślna), border-box */
-  /* Działa, gdy: element ma ustawione width, height lub flex-basis */
-  /* Nie działa, gdy: element ma display: inline, bo ignoruje wtedy width i height */
-  /* Po rodzicu: nie dziedziczy, dlatego reguła * ustawia ją każdemu elementowi osobno */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: border-box wlicza padding i border do width oraz height, content-box dolicza je na zewnątrz; margin nigdy się nie wlicza */
   box-sizing: border-box;
-
-  /* Zamyka regułę dla wszystkich elementów */
 }
 
-/* Reguła dla całej strony */
 body {
-  /* Ustawia bezszeryfową czcionkę systemową */
-  /* Wartości: lista nazw czcionek zakończona rodziną ogólną: serif, sans-serif, monospace, cursive, fantasy, system-ui */
-  /* Działa, gdy: czcionka jest dostępna; jeśli nie, przeglądarka bierze następną z listy */
-  /* Nie działa, gdy: przyciski i pola formularzy dostają własną czcionkę od przeglądarki i przejmą tę dopiero przez inherit */
-  /* Po rodzicu: dziedziczy, gdy element nie ma własnej czcionki */
-  /* Na potomne: przechodzi na wszystkie potomne bez własnej czcionki */
-  /* Model pudełkowy: zmienia rozmiar treści, a przez to pudełka o rozmiarze auto */
   font-family: system-ui, sans-serif;
 
-  /* Ustawia wysokość linii tekstu */
-  /* Wartości: normal (domyślna), liczba bez jednostki, długość, procent */
-  /* Działa, gdy: element lub jego potomek ma tekst */
-  /* Nie działa, gdy: element nie ma tekstu */
-  /* Po rodzicu: dziedziczy, gdy element nie ma własnej wartości */
-  /* Na potomne: przechodzi na potomne; liczba bez jednostki liczy się od czcionki każdego potomka osobno, a długość i procent przechodzą jako gotowa wartość */
-  /* Model pudełkowy: zmienia wysokość treści, a przez to pudełka o wysokości auto */
   line-height: 1.5;
 
-  /* Ustawia kolor tekstu */
-  /* Wartości: nazwa, np. red, kod #333, rgb(), hsl(), transparent, currentColor, var() */
-  /* Działa, gdy: element lub jego potomek ma tekst */
-  /* Nie działa, gdy: element nie ma tekstu; potomek z własnym kolorem go nadpisuje, a linki i przyciski dostają własny kolor od przeglądarki */
-  /* Po rodzicu: dziedziczy, gdy element nie ma własnego koloru */
-  /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
-  /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: var(--color-dark);
-
-  /* Zamyka regułę całej strony */
 }
 
-/* Reguła dla głównego elementu aplikacji */
 #app {
-  /* display flex: menu, treść i stopka stają się elementami flexboksa */
-  /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
-  /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
-  /* Nie działa, gdy: przodek ma display: none, bo wtedy element w ogóle się nie wyświetla; dziecko kontenera flex z inline lub inline-block i tak zachowuje się jak blok */
-  /* Po rodzicu: nie dziedziczy, dziecko elementu flex samo nie staje się kontenerem flex; można wymusić przez inherit */
-  /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci stają się elementami flex; dalsze potomne już nie */
-  /* Model pudełkowy: flex zajmuje całą szerokość rodzica, inline-flex tylko szerokość treści; dzieci zachowują treść, padding, border i margin, a ich marginesy się nie zapadają */
-  /* Position przy flex: static (domyślna) ignoruje top, right, bottom i left; relative i sticky zostawiają dziecko w układzie flex i tylko je przesuwają */
-  /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
-  /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: flex;
 
-  /* flex-direction column: ustawia elementy jeden pod drugim */
-  /* Wartości: row (domyślna), row-reverse, column, column-reverse */
-  /* Działa, gdy: element ma display: flex lub inline-flex; ustala oś główną: przy column justify-content działa w pionie, align-items w poziomie, a flex-basis oznacza wysokość */
-  /* Nie działa, gdy: element nie ma display: flex ani inline-flex */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: wartość nie przechodzi, ustawia kierunek tylko bezpośrednich dzieci */
-  /* Model pudełkowy: sam nie zmienia rozmiaru, ale decyduje, czy flex-grow i flex-shrink zmieniają szerokość czy wysokość pudełka dziecka */
   flex-direction: column;
 
-  /* Ustawia wysokość co najmniej na całe okno przeglądarki */
-  /* Wartości: 0 lub auto (domyślna; auto na elementach flex), długość, np. 50px, 100vh, procent, min-content, max-content, fit-content */
-  /* Działa, gdy: element jest blokiem, inline-block lub elementem flex; procent wymaga ustawionej wysokości rodzica */
-  /* Nie działa, gdy: element ma display: inline */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: dolny limit wysokości pudełka, ma pierwszeństwo przed height i max-height */
   min-height: 100vh;
-
-  /* Zamyka regułę głównego elementu */
 }
 
-/* Reguła dla kształtu wszystkich przycisków */
 .btn {
-  /* display inline-flex: przycisk jest flexboksem, ale zajmuje tylko tyle miejsca, ile potrzebuje */
-  /* Wartości: flex, inline-flex, block, inline, inline-block, none, contents, flow-root, table */
-  /* Działa, gdy: element jest wyświetlany na stronie; flex-direction, flex-wrap, justify-content, align-items, align-content i gap zaczynają działać dopiero przy flex albo inline-flex */
-  /* Nie działa, gdy: przodek ma display: none, bo wtedy element w ogóle się nie wyświetla; dziecko kontenera flex z inline lub inline-block i tak zachowuje się jak blok */
-  /* Po rodzicu: nie dziedziczy, dziecko elementu flex samo nie staje się kontenerem flex; można wymusić przez inherit */
-  /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci stają się elementami flex; dalsze potomne już nie */
-  /* Model pudełkowy: flex zajmuje całą szerokość rodzica, inline-flex tylko szerokość treści; dzieci zachowują treść, padding, border i margin, a ich marginesy się nie zapadają */
-  /* Position przy flex: static (domyślna) ignoruje top, right, bottom i left; relative i sticky zostawiają dziecko w układzie flex i tylko je przesuwają */
-  /* Position przy flex: absolute i fixed wyjmują dziecko z układu, więc nie działają na nie flex-grow, flex-shrink, flex-basis ani gap; punktem odniesienia jest najbliższy przodek z position innym niż static */
-  /* Inne właściwości przy flex: float, clear i vertical-align nie działają na dzieciach, a z-index działa na nich nawet bez position */
   display: inline-flex;
 
-  /* justify-content center: środkuje tekst przycisku w poziomie */
-  /* Wartości: normal (domyślna, działa jak flex-start), flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right */
-  /* Działa, gdy: element ma display: flex lub inline-flex i jest wolne miejsce w osi głównej */
-  /* Nie działa, gdy: element nie ma display: flex ani inline-flex albo brak wolnego miejsca, bo zabrało je dziecko z flex-grow lub margin: auto */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: wartość nie przechodzi, rozmieszcza tylko bezpośrednie dzieci */
-  /* Model pudełkowy: nie zmienia rozmiaru pudełek, rozdziela tylko wolne miejsce między nimi */
   justify-content: center;
 
-  /* align-items center: środkuje tekst przycisku w pionie */
-  /* Wartości: normal (domyślna, działa jak stretch), stretch, flex-start, flex-end, center, baseline, first baseline, last baseline, start, end */
-  /* Działa, gdy: element ma display: flex lub inline-flex; stretch działa, gdy dziecko nie ma ustawionej wysokości przy row albo szerokości przy column */
-  /* Nie działa, gdy: element nie ma display: flex ani inline-flex; pojedyncze dziecko może to zmienić własnym align-self */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: wartość nie przechodzi, ale bezpośrednie dzieci odczytują ją przez align-self: auto; dalsze potomne już nie */
-  /* Model pudełkowy: stretch powiększa pudełko dziecka w osi poprzecznej, pozostałe wartości zostawiają rozmiar wynikający z treści */
   align-items: center;
 
-  /* Model pudełkowy: wewnętrzny odstęp mały w pionie i duży w poziomie */
-  /* Wartości: 0, długość, procent; od jednej do czterech wartości: góra, prawa, dół, lewa; nie ma auto ani wartości ujemnych */
-  /* Działa, gdy: element jest wyświetlany na stronie */
-  /* Nie działa, gdy: element ma display: inline, bo odstęp górny i dolny nie odsuwa wtedy sąsiednich linii */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, ale odsuwa treść i dzieci od krawędzi tego elementu */
-  /* Model pudełkowy: warstwa między treścią a border, widać na niej tło; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   padding: var(--space-s) var(--space-m);
 
-  /* Model pudełkowy: usuwa obramowanie przycisku */
-  /* Wartości: skrót szerokość, styl, kolor; szerokość: thin, medium, thick, długość; styl: none, hidden, solid, dashed, dotted, double, groove, ridge, inset, outset */
-  /* Działa, gdy: styl jest inny niż none i hidden */
-  /* Nie działa, gdy: styl to none lub hidden albo nie został podany, bo obramowania wtedy nie ma */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: warstwa między padding a margin; przy border-box wlicza się do width i height, a przy content-box je powiększa */
   border: none;
 
-  /* Zaokrągla rogi przycisku */
-  /* Wartości: 0 (domyślna), długość, procent; od jednej do czterech wartości dla kolejnych rogów */
-  /* Działa, gdy: element ma widoczne tło lub obramowanie */
-  /* Nie działa, gdy: element nie ma tła ani obramowania; dzieci wystające poza róg są przycinane dopiero przy overflow: hidden */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dzieci mają swoje prostokątne rogi */
-  /* Model pudełkowy: nie zmienia rozmiaru pudełka */
   border-radius: var(--radius);
 
-  /* Ustawia jasny kolor tekstu przycisku */
-  /* Wartości: nazwa, np. red, kod #333, rgb(), hsl(), transparent, currentColor, var() */
-  /* Działa, gdy: element lub jego potomek ma tekst */
-  /* Nie działa, gdy: element nie ma tekstu; potomek z własnym kolorem go nadpisuje, a linki i przyciski dostają własny kolor od przeglądarki */
-  /* Po rodzicu: dziedziczy, gdy element nie ma własnego koloru */
-  /* Na potomne: przechodzi na wszystkie potomne bez własnego koloru */
-  /* Model pudełkowy: nie zmienia rozmiaru; obramowanie bez podanego koloru przejmuje tę wartość */
   color: var(--color-light);
 
-  /* Przejmuje czcionkę ze strony */
-  /* Wartości: inherit albo skrót styl, grubość, rozmiar/wysokość linii, rodzina, np. italic bold 16px/1.5 system-ui; także caption, icon, menu, message-box, small-caption, status-bar */
-  /* Działa, gdy: podano rozmiar i rodzinę czcionki albo jedno słowo kluczowe, np. inherit */
-  /* Nie działa, gdy: brakuje rozmiaru lub rodziny, bo wtedy cała deklaracja jest ignorowana */
-  /* Po rodzicu: składowe czcionki dziedziczą, ale przycisk dostaje własną czcionkę od przeglądarki, dlatego tu potrzebne jest inherit */
-  /* Na potomne: przechodzi na wszystkie potomne bez własnej czcionki */
-  /* Model pudełkowy: zmienia rozmiar treści, a przez to pudełka o rozmiarze auto */
   font: inherit;
 
-  /* Zmienia kursor na wskaźnik przy najechaniu na przycisk */
-  /* Wartości: auto (domyślna), default, pointer, text, move, wait, help, not-allowed, grab, grabbing, crosshair, none */
-  /* Działa, gdy: kursor myszy jest nad elementem */
-  /* Nie działa, gdy: urządzenie nie ma kursora, np. ekran dotykowy */
-  /* Po rodzicu: dziedziczy, gdy element nie ma własnego kursora */
-  /* Na potomne: przechodzi na wszystkie potomne bez własnego kursora */
-  /* Model pudełkowy: nie zmienia rozmiaru pudełka */
   cursor: pointer;
-
-  /* Zamyka regułę klasy btn */
 }
 
-/* Reguła dla przycisku po kliknięciu myszą */
 .btn:focus {
-  /* Usuwa obrys przycisku */
-  /* Wartości: skrót szerokość, styl, kolor; styl: none (domyślna), auto, solid, dashed, dotted, double, groove, ridge, inset, outset */
-  /* Działa, gdy: styl jest inny niż none */
-  /* Nie działa, gdy: styl to none */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie należy do modelu pudełkowego: rysuje się na zewnątrz border i nie zajmuje miejsca */
   outline: none;
-
-  /* Zamyka regułę fokusu */
 }
 
-/* Reguła dla przycisku wybranego klawiaturą */
 .btn:focus-visible {
-  /* Pokazuje obrys, żeby przy obsłudze klawiaturą było widać wybrany przycisk */
-  /* Wartości: skrót szerokość, styl, kolor; styl: none (domyślna), auto, solid, dashed, dotted, double, groove, ridge, inset, outset */
-  /* Działa, gdy: styl jest inny niż none */
-  /* Nie działa, gdy: styl to none */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie należy do modelu pudełkowego: rysuje się na zewnątrz border i nie zajmuje miejsca */
   outline: 2px solid var(--color-dark);
 
-  /* Odsuwa obrys od przycisku */
-  /* Wartości: 0 (domyślna) albo długość, także ujemna */
-  /* Działa, gdy: element ma widoczny outline */
-  /* Nie działa, gdy: outline ma styl none */
-  /* Po rodzicu: nie dziedziczy, każdy element ma własną wartość; można wymusić przez inherit */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie należy do modelu pudełkowego: odsuwa tylko obrys i nie zajmuje miejsca */
   outline-offset: 2px;
-
-  /* Zamyka regułę fokusu z klawiatury */
 }
 
-/* Reguła dla niebieskiego przycisku */
 .btn-primary {
-  /* Ustawia niebieskie tło */
-  /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
-  /* Działa, gdy: element ma rozmiar większy od zera */
-  /* Nie działa, gdy: element ma szerokość lub wysokość równą zero */
-  /* Po rodzicu: nie dziedziczy; przez przezroczyste dziecko widać jednak tło rodzica */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: blue;
-
-  /* Zamyka regułę klasy btn-primary */
 }
 
-/* Reguła dla niebieskiego przycisku po najechaniu kursorem */
 .btn-primary:hover {
-  /* Ustawia ciemniejsze niebieskie tło */
-  /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
-  /* Działa, gdy: element ma rozmiar większy od zera */
-  /* Nie działa, gdy: element ma szerokość lub wysokość równą zero */
-  /* Po rodzicu: nie dziedziczy; przez przezroczyste dziecko widać jednak tło rodzica */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: darkblue;
-
-  /* Zamyka regułę najechania */
 }
 
-/* Reguła dla niebieskiego przycisku w chwili kliknięcia */
 .btn-primary:active {
-  /* Ustawia jeszcze ciemniejsze niebieskie tło */
-  /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
-  /* Działa, gdy: element ma rozmiar większy od zera */
-  /* Nie działa, gdy: element ma szerokość lub wysokość równą zero */
-  /* Po rodzicu: nie dziedziczy; przez przezroczyste dziecko widać jednak tło rodzica */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: navy;
-
-  /* Zamyka regułę kliknięcia */
 }
 
-/* Reguła dla czerwonego przycisku */
 .btn-red {
-  /* Ustawia czerwone tło */
-  /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
-  /* Działa, gdy: element ma rozmiar większy od zera */
-  /* Nie działa, gdy: element ma szerokość lub wysokość równą zero */
-  /* Po rodzicu: nie dziedziczy; przez przezroczyste dziecko widać jednak tło rodzica */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: red;
-
-  /* Zamyka regułę klasy btn-red */
 }
 
-/* Reguła dla czerwonego przycisku po najechaniu kursorem */
 .btn-red:hover {
-  /* Ustawia ciemniejsze czerwone tło */
-  /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
-  /* Działa, gdy: element ma rozmiar większy od zera */
-  /* Nie działa, gdy: element ma szerokość lub wysokość równą zero */
-  /* Po rodzicu: nie dziedziczy; przez przezroczyste dziecko widać jednak tło rodzica */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: darkred;
-
-  /* Zamyka regułę najechania */
 }
 
-/* Reguła dla czerwonego przycisku w chwili kliknięcia */
 .btn-red:active {
-  /* Ustawia jeszcze ciemniejsze czerwone tło */
-  /* Wartości: transparent (domyślna), nazwa, np. red, kod #333, rgb(), hsl(), var() */
-  /* Działa, gdy: element ma rozmiar większy od zera */
-  /* Nie działa, gdy: element ma szerokość lub wysokość równą zero */
-  /* Po rodzicu: nie dziedziczy; przez przezroczyste dziecko widać jednak tło rodzica */
-  /* Na potomne: nie przechodzi, dotyczy tylko tego elementu */
-  /* Model pudełkowy: nie zmienia rozmiaru; maluje treść, padding i obszar pod border, ale nie margin */
   background-color: maroon;
-
-  /* Zamyka regułę kliknięcia */
 }
