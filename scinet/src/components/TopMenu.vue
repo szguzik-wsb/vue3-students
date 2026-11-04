@@ -7,6 +7,7 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/publications">Publications</RouterLink>
+      <RouterLink to="/obrazki">Obrazki</RouterLink>
       <a href="/about">Contact</a>
     </nav>
   </header>
@@ -71,6 +72,8 @@
   }
 
   .menu-items {
+    flex-wrap: wrap;
+
     justify-content: space-evenly;
   }
 }
